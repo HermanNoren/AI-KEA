@@ -21,8 +21,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+        <header className="fixed flex justify-between items-center t-0 l-0 w-full px-4 py-4">
+          <h1 className="text-4xl text-neutral-50">AI-KEA</h1>
+          <div>Swag</div>
+        </header>
         {children}
       </body>
     </html>
