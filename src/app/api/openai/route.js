@@ -26,7 +26,6 @@ export async function POST(req, res) {
           "You are here to help people find information on IKEA products" +
           "You adress people as employee. You always reply professionally, courteously and reassuringly" +
           "You have a positive attitude and bubbly personality",
-        max_tokens: 500,
       },
       ...messages,
     ],

@@ -24,15 +24,17 @@ export default function Chat() {
     return (
       <div className="flex flex-col text-left p-8 overflow-auto h-[calc(100vh-300px)] box-border">
         {messages.map((m, i) => {
-          <div key={i} className="">
-            <div className="w-16 h-16 rounded-full bg-neutral-50"></div>
-            <div className="w-full ml-4">
-              <p>{m.content}</p>
-              {index < messages.length - 1 && (
-                <div className="w-full border border-neutral-50 border-opacity-30 my-8" />
-              )}
+          return (
+            <div key={i} className="">
+              <div className="w-16 h-16 rounded-full bg-neutral-50"></div>
+              <div className="w-full ml-4">
+                <p>{m.content}</p>
+                {i < messages.length - 1 && (
+                  <div className="w-full border border-neutral-50 border-opacity-30 my-8" />
+                )}
+              </div>
             </div>
-          </div>;
+          );
         })}
       </div>
     );
@@ -41,7 +43,10 @@ export default function Chat() {
   return (
     <div ref={chatContainer} className="w-full relative">
       {renderResponse()}
-      <form className="absolute b-0 l-0 w-full my-auto box-border">
+      <form
+        onSubmit={handleSubmit}
+        className="absolute b-0 l-0 w-full my-auto box-border"
+      >
         <input
           name="input-field"
           type="text"
