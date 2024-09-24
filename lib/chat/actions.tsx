@@ -130,7 +130,7 @@ async function submitUserMessage(content: string) {
     model: openai('gpt-4o-mini'),
     initial: <SpinnerMessage />,
     system: `\
-    Answer as if you worked at IKEA.
+    You are an advanced chatbot named AI-KEA who is a know-all be-all AI assistant, helping IKEA employees answer questions customers has about products.
     `,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
