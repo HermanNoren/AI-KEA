@@ -1,5 +1,9 @@
 ## Getting Started
 
+```bash
+npm i next@14.2.13
+```
+
 First, run the development server:
 
 ```bash
