@@ -67,7 +67,7 @@ export function Header() {
           <span className="hidden ml-2 md:flex">GitHub</span>
         </a>
         <a
-          href="https://vercel.com/templates/Next.js/nextjs-ai-chatbot"
+          href="https://tek-830-team-15.vercel.app/"
           target="_blank"
           className={cn(buttonVariants())}
         >
