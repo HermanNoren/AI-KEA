@@ -8,29 +8,16 @@ export function EmptyScreen() {
   return (
     <div className="mx-auto max-w-2xl px-4">
       <div className="flex flex-col gap-2 rounded-lg border bg-background p-8">
-        <h1 className="text-lg font-semibold">
-          Welcome to Next.js AI Chatbot!
-        </h1>
+        <h1 className="text-lg font-semibold">Welcome to AI-KEA!</h1>
         <p className="leading-normal text-muted-foreground">
-          This is an open source AI chatbot app template built with{' '}
-          <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>, the{' '}
-          <ExternalLink href="https://sdk.vercel.ai">
-            Vercel AI SDK
-          </ExternalLink>
-          , and{' '}
-          <ExternalLink href="https://vercel.com/storage/kv">
-            Vercel KV
-          </ExternalLink>
-          .
+          This is an advanced chat bot trained to make your life as an IKEA
+          employee easier. Ask me anything you want to know about IKEA products
+          and I'll answer.
         </p>
         <p className="leading-normal text-muted-foreground">
-          It uses{' '}
-          <ExternalLink href="https://vercel.com/blog/ai-sdk-3-generative-ui">
-            React Server Components
-          </ExternalLink>{' '}
-          to combine text with generative UI as output of the LLM. The UI state
-          is synced through the SDK so the model is aware of your interactions
-          as they happen.
+          This projects is created by Capstone Team 15 in the course TEK830
+          Digitalization and AI in practice given by Chalmers University of
+          Technology.
         </p>
       </div>
     </div>

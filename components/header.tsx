@@ -29,18 +29,21 @@ async function UserOrLogin() {
         </>
       ) : (
         <Link href="/new" rel="nofollow">
-          <IconNextChat className="size-6 mr-2 dark:hidden" inverted />
-          <IconNextChat className="hidden size-6 mr-2 dark:block" />
+          <span className="font-semibold">AI-KEA</span>
         </Link>
       )}
       <div className="flex items-center">
-        <IconSeparator className="size-6 text-muted-foreground/50" />
+        {/*<IconSeparator className="size-6 text-muted-foreground/50" />*/}
         {session?.user ? (
           <UserMenu user={session.user} />
         ) : (
-          <Button variant="link" asChild className="-ml-2">
+          <>
+            {/* 
+                      <Button variant="link" asChild className="-ml-2">
             <Link href="/login">Login</Link>
           </Button>
+            */}
+          </>
         )}
       </div>
     </>
@@ -70,9 +73,8 @@ export function Header() {
           target="_blank"
           className={cn(buttonVariants())}
         >
-          <IconVercel className="mr-2" />
-          <span className="hidden sm:block">Deploy to Vercel</span>
-          <span className="sm:hidden">Deploy</span>
+          <span className="hidden sm:block">Innovation Website</span>
+          <span className="sm:hidden">Website</span>
         </a>
       </div>
     </header>
