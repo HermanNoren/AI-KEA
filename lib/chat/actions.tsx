@@ -35,6 +35,7 @@ import { saveChat } from '@/app/actions'
 import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
 import { Chat, Message } from '@/lib/types'
 import { auth } from '@/auth'
+import { neon } from '@neondatabase/serverless'
 
 async function confirmPurchase(symbol: string, price: number, amount: number) {
   'use server'
@@ -106,6 +107,12 @@ async function confirmPurchase(symbol: string, price: number, amount: number) {
   }
 }
 
+async function getData() {
+  const sql = neon(process.env.NEXT_PUBLIC_DATABASE_URL!)
+  const response = await sql`SELECT * FROM ProductDetails`
+  return response
+}
+
 async function submitUserMessage(content: string) {
   'use server'
 
@@ -126,12 +133,21 @@ async function submitUserMessage(content: string) {
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
 
+  let data = await getData()
+  const jsonData = JSON.stringify(data, null, 2)
+
   const result = await streamUI({
     model: openai('gpt-4o-mini'),
     initial: <SpinnerMessage />,
     system: `\
-    You are an advanced chatbot named AI-KEA who is a know-all be-all AI assistant, helping IKEA employees answer questions customers has about products.
-    `,
+    You are an AI assistant named AI-KEA. You are a professional yet friendly assistant, designed to help IKEA employees find product information quickly and effectively. 
+    You should respond in a conversational, approachable tone, while maintaining professionalism. you can freely use open language, ensuring responses are clear and helpful.
+    When providing any technical data about products, you must STRICTLY and ONLY use information from ${jsonData}. 
+    If the requested data is not available, you must politely inform the user that the information is not available and must NOT attempt to retrieve data from any other sources. 
+    You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/".
+    You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for. 
+    When the user asks about a broad product category (e.g., sofas) that has many options, you should present 3 relevant examples and ask if the user would like to see more options. 
+    All links you provide in your answer should be formatted in a way that it opens in a new tab in the browser.`,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
         role: message.role,
