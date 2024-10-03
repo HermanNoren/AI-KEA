@@ -1,5 +1,6 @@
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Poppins } from 'next/font/google'
 
 import '@/app/globals.css'
 import { cn } from '@/lib/utils'
@@ -7,6 +8,8 @@ import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
+
+const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: process.env.VERCEL_URL
@@ -40,9 +43,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'font-sans antialiased',
-          GeistSans.variable,
-          GeistMono.variable
+          'antialiased',
+          //'font-sans antialiased',
+          //GeistSans.variable,
+          //GeistMono.variable,
+          poppins.className
         )}
       >
         <Toaster position="top-center" />

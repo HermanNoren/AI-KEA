@@ -67,7 +67,7 @@ export function Header() {
           <span className="hidden ml-2 md:flex">GitHub</span>
         </a>
         <a
-          href="https://tek-830-team-15.vercel.app/"
+          href="https://ai-kea-team15.vercel.app/"
           target="_blank"
           className={cn(buttonVariants())}
         >
