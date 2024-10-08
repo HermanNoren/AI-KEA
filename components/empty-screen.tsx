@@ -12,7 +12,7 @@ export function EmptyScreen() {
         <p className="leading-normal text-muted-foreground">
           This is an advanced chat bot trained to make your life as an IKEA
           employee easier. Ask me anything you want to know about IKEA products
-          and I'll answer.
+          and I'll answer to the best of my abilities.
         </p>
         <p className="leading-normal text-muted-foreground">
           This projects is created by Capstone Team 15 in the course TEK830

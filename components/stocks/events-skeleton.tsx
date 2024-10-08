@@ -1,9 +1,9 @@
 const placeholderEvents = [
   {
-    date: '2022-10-01',
-    headline: 'NVIDIA releases new AI-powered graphics card',
+    date: '2024-09-26',
+    headline: 'Psst! Vi har smygöppnat julbutiken online',
     description:
-      'NVIDIA unveils the latest graphics card infused with AI capabilities, revolutionizing gaming and rendering experiences.'
+      'Slipp en del av julstressen genom att hitta dina favoriter bland julpynt, julbelysning, ljusstakar och julgranar redan nu. På så sätt kan du njuta i lugn och ro av julen när den väl är här.'
   }
 ]
 
