@@ -1,5 +1,6 @@
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Poppins } from 'next/font/google'
 
 import '@/app/globals.css'
 import { cn } from '@/lib/utils'
@@ -8,15 +9,17 @@ import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 
+const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
+
 export const metadata = {
   metadataBase: process.env.VERCEL_URL
     ? new URL(`https://${process.env.VERCEL_URL}`)
     : undefined,
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'AI-KEA Chat bot',
+    template: `%s - AI-KEA`
   },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
+  description: 'An AI-powered chatbot',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -40,9 +43,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'font-sans antialiased',
-          GeistSans.variable,
-          GeistMono.variable
+          'antialiased',
+          //'font-sans antialiased',
+          //GeistSans.variable,
+          //GeistMono.variable,
+          poppins.className
         )}
       >
         <Toaster position="top-center" />

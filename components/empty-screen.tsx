@@ -15,7 +15,7 @@ export function EmptyScreen() {
           and I'll answer to the best of my abilities.
         </p>
         <p className="leading-normal text-muted-foreground">
-          This projects is created by Capstone Team 15 in the course TEK830
+          This project is created by Capstone Team 15 in the course TEK830
           Digitalization and AI in practice given by Chalmers University of
           Technology.
         </p>

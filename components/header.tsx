@@ -59,7 +59,7 @@ export function Header() {
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
-          href="https://github.com/vercel/nextjs-ai-chatbot/"
+          href="https://github.com/HermanNoren/AI-KEA"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
@@ -67,7 +67,7 @@ export function Header() {
           <span className="hidden ml-2 md:flex">GitHub</span>
         </a>
         <a
-          href="https://tek-830-team-15.vercel.app/"
+          href="https://ai-kea-team15.vercel.app/"
           target="_blank"
           className={cn(buttonVariants())}
         >
