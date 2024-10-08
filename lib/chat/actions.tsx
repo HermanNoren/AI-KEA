@@ -144,10 +144,10 @@ async function submitUserMessage(content: string) {
     You should respond in a conversational, approachable tone, while maintaining professionalism. you can freely use open language, ensuring responses are clear and helpful.
     When providing any technical data about products, you must STRICTLY and ONLY use information from ${jsonData}. 
     If the requested data is not available, you must politely inform the user that the information is not available and must NOT attempt to retrieve data from any other sources. 
-    You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/".
+    You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/se/sv".
     You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for. 
     When the user asks about a broad product category (e.g., sofas) that has many options, you should present 3 relevant examples and ask if the user would like to see more options. 
-    All links you provide in your answer should be formatted in a way that it opens in a new tab in the browser.`,
+    Very important is that all links you refer to should be provided with target="_blank" so they open in a new tab`,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
         role: message.role,

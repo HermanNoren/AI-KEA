@@ -47,6 +47,18 @@ export function BotMessage({
             p({ children }) {
               return <p className="mb-2 last:mb-0">{children}</p>
             },
+            a({ href, children, ...props }) {
+              return (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...props}
+                >
+                  {children}
+                </a>
+              )
+            },
             code({ node, inline, className, children, ...props }) {
               if (children.length) {
                 if (children[0] == '▍') {
