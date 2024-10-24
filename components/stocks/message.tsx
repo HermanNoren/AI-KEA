@@ -60,18 +60,6 @@ export function BotMessage({
                 </a>
               )
             },
-            img({ src, alt, ...props }) {
-              return (
-                <Image
-                  src={src}
-                  alt={alt}
-                  className="object-cover rounded-md"
-                  width={350}
-                  height={350}
-                  {...props}
-                />
-              )
-            },
             code({ node, inline, className, children, ...props }) {
               if (children.length) {
                 if (children[0] == '▍') {
