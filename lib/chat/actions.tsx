@@ -37,6 +37,8 @@ import { Chat, Message } from '@/lib/types'
 import { auth } from '@/auth'
 import { neon } from '@neondatabase/serverless'
 
+import herman from '@/app/herman.png'
+
 async function confirmPurchase(symbol: string, price: number, amount: number) {
   'use server'
 
@@ -109,7 +111,7 @@ async function confirmPurchase(symbol: string, price: number, amount: number) {
 
 async function getData() {
   const sql = neon(process.env.NEXT_PUBLIC_DATABASE_URL!)
-  const response = await sql`SELECT * FROM ProductDetails`
+  const response = await sql`SELECT * FROM product_view`
   return response
 }
 
@@ -145,9 +147,11 @@ async function submitUserMessage(content: string) {
     When providing any technical data about products, you must STRICTLY and ONLY use information from ${jsonData}. 
     If the requested data is not available, you must politely inform the user that the information is not available and must NOT attempt to retrieve data from any other sources. 
     You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/se/sv".
-    You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for. 
-    When the user asks about a broad product category (e.g., sofas) that has many options, you should present 3 relevant examples and ask if the user would like to see more options. 
-    Very important is that all links you refer to should be provided with target="_blank" so they open in a new tab`,
+    You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for.
+    Do not list products with the same series and model multiple times, having the same series and model means they are the same product. For example, don't list "KIVIK 3-seat sofa" multiple times. Instead,
+    if for example the product has multiple colors, list the product once and say that it has multiple colors. Instead of listing the same item multiple times you should list different products,
+    either within the same series or from another series.
+    When the user asks about a broad product category (e.g., sofas) that has many options, unless the user asks for a specific amount, you should present 3 relevant examples and ask if the user would like to see more options.`,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
         role: message.role,

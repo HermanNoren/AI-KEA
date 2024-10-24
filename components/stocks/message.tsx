@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import { StreamableValue } from 'ai/rsc'
 import { useStreamableText } from '@/lib/hooks/use-streamable-text'
+import Image from 'next/image'
 
 // Different types of message bubbles.
 
@@ -57,6 +58,18 @@ export function BotMessage({
                 >
                   {children}
                 </a>
+              )
+            },
+            img({ src, alt, ...props }) {
+              return (
+                <Image
+                  src={src}
+                  alt={alt}
+                  className="object-cover rounded-md"
+                  width={350}
+                  height={350}
+                  {...props}
+                />
               )
             },
             code({ node, inline, className, children, ...props }) {

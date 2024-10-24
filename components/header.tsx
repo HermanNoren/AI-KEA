@@ -56,25 +56,7 @@ export function Header() {
           <UserOrLogin />
         </React.Suspense>
       </div>
-      <div className="flex items-center justify-end space-x-2">
-        <a
-          target="_blank"
-          href="https://github.com/HermanNoren/AI-KEA"
-          rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: 'outline' }))}
-        >
-          <IconGitHub />
-          <span className="hidden ml-2 md:flex">GitHub</span>
-        </a>
-        <a
-          href="https://ai-kea-team15.vercel.app/"
-          target="_blank"
-          className={cn(buttonVariants())}
-        >
-          <span className="hidden sm:block">Innovation Website</span>
-          <span className="sm:hidden">Website</span>
-        </a>
-      </div>
+      <div className="flex items-center justify-end space-x-2"></div>
     </header>
   )
 }
