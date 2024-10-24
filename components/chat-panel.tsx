@@ -47,8 +47,8 @@ export function ChatPanel({
     },
     {
       heading: 'Can you give me examples',
-      subheading: 'of white living room products?',
-      message: `Can you give me examples of living room products?`
+      subheading: 'of gray living room products?',
+      message: `Can you give me examples of gray living room products?`
     },
     {
       heading: 'What are some',
