@@ -135,8 +135,8 @@ async function submitUserMessage(content: string) {
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
 
-  //let data = await getData()
-  //const jsonData = JSON.stringify(data, null, 2)
+  let data = await getData()
+  const jsonData = JSON.stringify(data, null, 2)
 
   const result = await streamUI({
     model: openai('gpt-4o-mini'),
@@ -144,7 +144,7 @@ async function submitUserMessage(content: string) {
     system: `\
     You are an AI assistant named AI-KEA. You are a professional yet friendly assistant, designed to help IKEA employees find product information quickly and effectively. 
     You should respond in a conversational, approachable tone, while maintaining professionalism. you can freely use open language, ensuring responses are clear and helpful.
-    When providing any technical data about products, you must STRICTLY and ONLY use information from IEKA. 
+    When providing any technical data about products, you must STRICTLY and ONLY use information from ${jsonData}. 
     If the requested data is not available, you must politely inform the user that the information is not available and must NOT attempt to retrieve data from any other sources. 
     You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/se/sv".
     You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for.
