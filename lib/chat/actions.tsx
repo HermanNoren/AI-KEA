@@ -37,8 +37,6 @@ import { Chat, Message } from '@/lib/types'
 import { auth } from '@/auth'
 import { neon } from '@neondatabase/serverless'
 
-import herman from '@/app/herman.png'
-
 async function confirmPurchase(symbol: string, price: number, amount: number) {
   'use server'
 
@@ -109,12 +107,6 @@ async function confirmPurchase(symbol: string, price: number, amount: number) {
   }
 }
 
-async function getData() {
-  const sql = neon(process.env.NEXT_PUBLIC_DATABASE_URL!)
-  const response = await sql`SELECT * FROM product_view`
-  return response
-}
-
 async function submitUserMessage(content: string) {
   'use server'
 
@@ -135,16 +127,13 @@ async function submitUserMessage(content: string) {
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
 
-  let data = await getData()
-  const jsonData = JSON.stringify(data, null, 2)
-
   const result = await streamUI({
     model: openai('gpt-4o-mini'),
     initial: <SpinnerMessage />,
     system: `\
     You are an AI assistant named AI-KEA. You are a professional yet friendly assistant, designed to help IKEA employees find product information quickly and effectively. 
     You should respond in a conversational, approachable tone, while maintaining professionalism. you can freely use open language, ensuring responses are clear and helpful.
-    When providing any technical data about products, you must STRICTLY and ONLY use information from ${jsonData}. 
+    When providing any technical data about products, you must STRICTLY and ONLY use information from . 
     If the requested data is not available, you must politely inform the user that the information is not available and must NOT attempt to retrieve data from any other sources. 
     You can tell the user that they can look on the IKEA website and give them the link: "https://www.ikea.com/se/sv".
     You can offer alternative examples from the given data if relevant, but you must inform the user that these are relevant OPTIONS and not exactly what they were searching for.
