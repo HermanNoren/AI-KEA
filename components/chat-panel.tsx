@@ -37,8 +37,8 @@ export function ChatPanel({
   const exampleMessages = [
     {
       heading: 'Can you help me compare',
-      subheading: 'Kivik and Söderhamn Sofas?',
-      message: `Can you help me compare Kivik and Söderhamn Sofas?`
+      subheading: 'one Kivik and one Söderhamn Sofas',
+      message: `Can you help me compare one Kivik and one Söderhamn Sofa?`
     },
     {
       heading: 'What colours could',
