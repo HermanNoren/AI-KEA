@@ -15,6 +15,10 @@ export function EmptyScreen() {
           and I'll answer to the best of my abilities.
         </p>
         <p className="leading-normal text-muted-foreground">
+          Note that the scope of our project is limited to the living room, 
+          within which we have focused on sofas, coffee tables and side tables.
+        </p>
+        <p className="leading-normal text-muted-foreground">
           This project is created by Capstone Team 15 in the course TEK830
           Digitalization and AI in practice given by Chalmers University of
           Technology.
