@@ -19,13 +19,15 @@ export function EmptyScreen() {
           Digitalization and AI in practice given by Chalmers University of
           Technology.
         </p>
+      </div>
+      <div className="flex flex-col gap-2 rounded-lg border bg-background p-8">
         <h1 className="text-lg font-semibold">OBS!</h1>
         <p className="leading-normal text-muted-foreground">
           To avoid paid subscriptions in creating this project, we are using
           free versions of various services. This comes with limitations to
-          the text size that can be generated. If you bypass this limit an
-          error will occur, after which you will have to refresh to continue
-          using our product.
+          the text size that can be generated per query. If you bypass this 
+          limit an error will occur, after which you will have to refresh to 
+          continue using our product.
         </p>
       </div>
     </div>
