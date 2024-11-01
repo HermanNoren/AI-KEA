@@ -47,8 +47,8 @@ export function ChatPanel({
     },
     {
       heading: 'Can you give me a suggestion',
-      subheading: 'for a budget-friendly sofa?',
-      message: `Can you give me a suggestion for a budget-friendly sofa?`
+      subheading: 'for a sofa that is budget-friendly?',
+      message: `Can you give me a suggestion for a sofa that is budget-friendly?`
     },
     {
       heading: 'Could you recommend',
