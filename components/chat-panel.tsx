@@ -36,24 +36,24 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: 'Can you help me',
-      subheading: 'compare two sofas?',
-      message: `Can you help me compare two sofas?`
+      heading: 'Can you help me compare',
+      subheading: 'Kivik and Söderhamn Sofas?',
+      message: `Can you help me compare Kivik and Söderhamn Sofas?`
     },
     {
-      heading: 'Where can I find',
-      subheading: 'SÖDERHAMN sofa?',
-      message: 'In what part of the store can I find SÖDERHAMN sofas?'
+      heading: 'What colours could',
+      subheading: 'Söderhamn sofa have?',
+      message: 'What colours could Söderhamn sofa have?'
     },
     {
-      heading: 'Can you give me examples',
-      subheading: 'of gray living room products?',
-      message: `Can you give me examples of gray living room products?`
+      heading: 'Can you give me a suggestion',
+      subheading: 'for a budget-friendly sofa?',
+      message: `Can you give me a suggestion for a budget-friendly sofa?`
     },
     {
-      heading: 'What are some',
-      subheading: `good three seat sofas?`,
-      message: `What are some good three seat sofas?`
+      heading: 'Could you recommend',
+      subheading: `a sofa that fits in a small apartment?`,
+      message: `Could you recommend a sofa that fits a small apartment?`
     }
   ]
 
